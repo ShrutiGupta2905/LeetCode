@@ -9,14 +9,13 @@ public:
             newDp[rem]++;
             for(int oldRem = 0; oldRem < k; oldRem++){
                 int newRem = (1LL * oldRem * num) % k;
-                newDp[newRem] += dp[oldRem];
+                newDp[newRem] += dp[oldRem]; 
             }
             dp = newDp;
             for(int i=0;i<k;i++){
-            ans[i] += dp[i];
+                ans[i] += dp[i];
             }
         }
-        
         return ans;
     }
 };
