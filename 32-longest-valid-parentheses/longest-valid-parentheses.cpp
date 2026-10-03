@@ -11,19 +11,13 @@ public:
                 st.push(i);
             } else {
                 if(!st.empty()) {
-                    // STACK NOT EMPTY
                     st.pop();
-                    if(st.empty() == false)
-                        ans = max(ans, i - st.top());
-                    else 
-                        ans = max(ans, i - index);
-                } else {
-                    // STACK EMPTY
-                    index = i;
+                    if(!st.empty()) ans = max(ans, i - st.top());
+                    else ans = max(ans, i - index);
                 }
+                else index = i;
             }
         }
-
         return ans;
     }
 };
